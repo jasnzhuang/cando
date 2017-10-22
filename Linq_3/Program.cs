@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Linq_3
 {
@@ -18,19 +14,19 @@ namespace Linq_3
         public string StateProvince { get; set; }
         public Contact(string company, string lastName, string firstName, string address, string city, string stateProvince)
         {
-            this.Company = company;
-            this.LastName = lastName;
-            this.FirstName = firstName;
-            this.Address = address;
-            this.City = city;
-            this.StateProvince = stateProvince;
+            Company = company;
+            LastName = lastName;
+            FirstName = firstName;
+            Address = address;
+            City = city;
+            StateProvince = stateProvince;
         }
     }
 
 
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             
             Contact[] contacts ={
