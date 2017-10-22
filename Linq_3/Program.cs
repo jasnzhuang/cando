@@ -34,20 +34,25 @@ namespace Linq_3
         {
 
             Contact[] contacts ={
-                new Contact("123", "456", "567", "678", "789", "890"),
-                new Contact("123", "456", "567", "678", "789", "890"),
-                new Contact("123", "456", "567", "678", "789", "890"),
-                new Contact("123", "456", "567", "678", "789", "890"),
-                new Contact("123", "456", "567", "678", "789", "890"),
-                new Contact("123", "456", "567", "678", "789", "890"),
-                new Contact("123", "456", "567", "678", "789", "890"),
+                new Contact("骗子公司", "眯眯眼", "刘", "678", "哈尔滨", "黑龙江"),
+                new Contact("传销公司", "大伟", "王", "678", "沈阳", "辽宁"),
+                new Contact("转账公司", "璇", "刘", "678", "长春", "吉林"),
+                new Contact("会计公司", "冬雪", "邢", "678", "四平", "吉林"),
+                new Contact("财务公司", "四元", "于", "678", "吉林市", "吉林"),
+                new Contact("保险公司", "大骨架", "耿", "678", "滦县", "河北"),
+                new Contact("人口公司", "崟才", "江", "678", "嘉兴", "浙江"),
                 };
 
             var result = from contact in contacts
-                         select contact.FirstName;
-            foreach (var name in result)
+                         group contact by contact.StateProvince;
+            foreach (var grp in result)
             {
-                Console.WriteLine(name);
+                Console.WriteLine(grp.Key);
+                foreach (var details in grp)
+                {
+                    Console.WriteLine("{0}---{1}---{2}{3}",details.City,details.Company, details.FirstName, details.LastName
+                        );
+                }
             }
             Console.ReadKey();
         }
