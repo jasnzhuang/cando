@@ -77,7 +77,7 @@ namespace @params
 
         static void Main(string[] args)
         {
-            int i = 1; string j = "C#";//输出参数赋值
+            var i = 1; var j = "C#";//输出参数赋值
 
             AMethod(i);//调用值传递函数
             Console.WriteLine("(1)、 i=1;经过AMethod方法（加1），值传递之后  i=" + i);
@@ -91,8 +91,8 @@ namespace @params
             Console.Write("(3)、 i=1;经过CMethod方法，out传递之后 ");
             Console.WriteLine("i=" + i + " j=" + j); Console.WriteLine();
 
-            string a = "aaa";
-            string b = "bbb";
+            var a = "aaa";
+            var b = "bbb";
             string[] c = { "cc", "dd" };
             DMethod();
             DMethod(a);

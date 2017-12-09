@@ -71,7 +71,7 @@ namespace car
 
         static void Main(string[] args)
         {
-            Car CVVIC = new Car();
+            var CVVIC = new Car();
             CVVIC.Name = "CVVIC";
             CVVIC.Brand = "Honda";
             CVVIC.Type = "A Class Car";

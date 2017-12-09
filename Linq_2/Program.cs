@@ -106,7 +106,7 @@ namespace Linq_2
             var query =
                 from val in arr
                 select val;
-            foreach (Student item in query)
+            foreach (var item in query)
             {
                 Console.WriteLine(item);
             }
@@ -121,7 +121,7 @@ namespace Linq_2
             var query2 =
                 from val in arr
                 select val.Name;
-            foreach (string item in query2)
+            foreach (var item in query2)
             {
                 Console.Write("{0},   ", item);
             }
@@ -135,7 +135,7 @@ namespace Linq_2
             var query3 =
                 from val in arr
                 select val.Name.Length;
-            foreach (int item in query3)
+            foreach (var item in query3)
             {
                 Console.Write("{0},   ", item);
             }

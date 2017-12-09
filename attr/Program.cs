@@ -32,7 +32,7 @@ namespace attr
     public class Test{
         public static void Swap(ref int x, ref int y)
         {
-           int temp = x;
+           var temp = x;
             x = y;
             y = temp;
         }

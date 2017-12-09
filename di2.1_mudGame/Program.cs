@@ -33,7 +33,7 @@ namespace di2._1_mudGame
 
         public void AttackTarget(Monster monster)
         {
-            Int32 loss = (_random.NextDouble() < 0.5) ? 100 : 200;
+            var loss = (_random.NextDouble() < 0.5) ? 100 : 200;
             if (200 == loss)
             {
                 Console.WriteLine("出现暴击！！！");
@@ -140,18 +140,18 @@ namespace di2._1_mudGame
             Console.WriteLine("更别提你的什么狗屁理想和未来");
             Console.ReadLine();
             Console.WriteLine("那么，首先请输入你的名字：");
-            string name=Console.ReadLine();
+            var name=Console.ReadLine();
             Console.WriteLine("好吧，原来你就是令正派学生闻风丧胆，让别人家孩子望而退却，只能活在老师眼角的 "+name+" 啊！");
             Console.WriteLine("随便敲一下键盘的回车键，让我们开始吧。。。");
             Console.ReadLine();
             //生成怪物  
-            Monster monster1 = new Monster("小怪A", 50);
-            Monster monster2 = new Monster("小怪B", 50);
-            Monster monster3 = new Monster("关主", 200);
-            Monster monster4 = new Monster("最终Boss", 1000);
+            var monster1 = new Monster("小怪A", 50);
+            var monster2 = new Monster("小怪B", 50);
+            var monster3 = new Monster("关主", 200);
+            var monster4 = new Monster("最终Boss", 1000);
 
             //生成角色  
-            Role role = new Role(name,100);
+            var role = new Role(name,100);
 
             //木剑攻击  
             role.Weapon = new WoodSword();

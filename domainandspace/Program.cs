@@ -27,13 +27,13 @@ namespace domainandspace
     {
         static void Main(string[] args)
         {
-            Contact c = new Contact();
+            var c = new Contact();
             Console.WriteLine(c.Age);
             c.F();
             Console.WriteLine(c.Age);
             c.G();
             Console.WriteLine(c.Age);
-            Contatc cc = new Contatc();
+            var cc = new Contatc();
             cc.cid = 11;
             Console.WriteLine(cc.cid);
             Console.ReadKey();

@@ -38,7 +38,7 @@ namespace Linq_1
 
             // The Dump extension method writes out queries:
 
-            foreach(string word in words)
+            foreach(var word in words)
             {
                 Console.WriteLine(word);
             }

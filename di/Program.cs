@@ -33,7 +33,7 @@ namespace di
 
         public void AttackTarget(Monster monster)
         {
-            Int32 loss = (_random.NextDouble() < 0.5) ? 100 : 200;
+            var loss = (_random.NextDouble() < 0.5) ? 100 : 200;
             if (200 == loss)
             {
                 Console.WriteLine("出现暴击！！！");
@@ -48,7 +48,7 @@ namespace di
 
         public void AttackTarget(Monster monster)
         {
-            Int32 loss = (_random.NextDouble() < 0.5) ? 300 : 600;
+            var loss = (_random.NextDouble() < 0.5) ? 300 : 600;
             if (600 == loss)
             {
                 Console.WriteLine("出现暴击！！！");
@@ -128,13 +128,13 @@ namespace di
         static void Main(string[] args)
         {
             //生成怪物  
-            Monster monster1 = new Monster("小怪A", 50);
-            Monster monster2 = new Monster("小怪B", 50);
-            Monster monster3 = new Monster("关主", 200);
-            Monster monster4 = new Monster("最终Boss", 1000);
+            var monster1 = new Monster("小怪A", 50);
+            var monster2 = new Monster("小怪B", 50);
+            var monster3 = new Monster("关主", 200);
+            var monster4 = new Monster("最终Boss", 1000);
 
             //生成角色  
-            Role role = new Role();
+            var role = new Role();
 
             //木剑攻击  
             role.Weapon = new WoodSword();

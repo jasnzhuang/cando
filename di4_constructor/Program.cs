@@ -31,6 +31,10 @@ namespace di4_constructor
     {
         private IServiceClass _serviceImpl;
 
+        public ClientClass()
+        {
+        }
+
         public ClientClass(IServiceClass serviceImpl)
         {
             this._serviceImpl = serviceImpl;
@@ -54,10 +58,11 @@ namespace di4_constructor
             IServiceClass serviceB = new ServiceClassB();
             ClientClass client = new ClientClass();
 
-            client.Set_ServiceImpl(serviceA);
-            client.ShowInfo();
-            client.Set_ServiceImpl(serviceB);
-            client.ShowInfo();
+            //client.Set_ServiceImpl(serviceA);
+            //client.ShowInfo();
+            //client.Set_ServiceImpl(serviceB);
+            //client.ShowInfo();
             Console.ReadLine();
+        }
     }
 }

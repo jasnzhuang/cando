@@ -51,7 +51,7 @@ namespace di3_setter
         {
             IServiceClass serviceA = new ServiceClassA();
             IServiceClass serviceB = new ServiceClassB();
-            ClientClass client = new ClientClass();
+            var client = new ClientClass();
 
             client.Set_ServiceImpl(serviceA);
             client.ShowInfo();

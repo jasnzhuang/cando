@@ -167,7 +167,7 @@ namespace cando
 
             lxh.PrintInfo();
 
-            PlantPerson szh = new PlantPerson();
+            var szh = new PlantPerson();
 
             szh.Name = "苏子豪";
 
@@ -185,7 +185,7 @@ namespace cando
 
             //目的是让程序具有良好的可扩展性，使程序做到解耦，降低彼此的耦合度,不懂什么叫做解耦、耦合度的，请自行百度
 
-            Person zls = new Person();
+            var zls = new Person();
 
             zls.Name = "庄老师";
 
