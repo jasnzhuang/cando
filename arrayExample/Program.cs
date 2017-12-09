@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace iList
+namespace arrayExample
 {
     public class CreateArray
     {

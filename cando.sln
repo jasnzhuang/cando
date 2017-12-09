@@ -35,7 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "171108_2", "171108_2\171108
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "params", "params\params.csproj", "{47C3A85E-8D0C-4587-8D29-CE294780CBEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "iList\Array.csproj", "{85CB510B-9A2E-4158-BD9F-0F2CAAAA5389}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "arrayExample\Array.csproj", "{85CB510B-9A2E-4158-BD9F-0F2CAAAA5389}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
