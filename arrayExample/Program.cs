@@ -328,6 +328,38 @@ namespace arrayExample
         }
     }
 
+    public class FindIn
+    {
+        public void FindInArray(string[] args)
+        {
+            int[] intArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2, 3, 4, 5, 6 };
+            //想查找是否存在某个元素比如说8  
+            //IndexOf可以查找元素首次出现的位置  
+            //LastIndexOf可以查找元素最后一次出现的位置，位置都是以0开始的索引值  
+            //IndexOf与LastIndexOf都返回数组或集合中最后一次出现该元素的一个索引值，为整型int  
+            //int result;  
+            //IndexOf(参数1，参数2)：参数1是我们要查找的数据，参数2是要查找的元素  
+            //result = Array.IndexOf(intArray, 5);  
+            //我们常常利用返回值来判断某个数组中是否存在某个元素，存在返回的是一个>=0的索引值，不存在时，返回一个负数。  
+            //if (result < 0) Console.WriteLine("该数组中不存在该元素");  
+            //else Console.WriteLine("找到该元素");  
+
+            //int result2 = Array.BinarySearch(intArray.28);  
+            //Console.WriteLine("result2的值是"+result2);  
+            //BinarySearch用于查找元素首次出现的索引值，采用的方法叫做二分法（速度快），如果不存在该元素，返回一个负数。  
+
+            //Array的contains方法实际是对IList接口中方法的实现，因此使用之前需要将数组转换为该对象  
+            //转换的格式：(System.Collections.IList)intArray.Contains(8);  
+            //返回一个布尔值  
+            bool myBool;
+            myBool = ((System.Collections.IList)intArray).Contains(8);
+            if (myBool) Console.WriteLine("存在该元素");
+            else Console.WriteLine("不存在");
+            Console.WriteLine("5第一次出现的索引值是{0}，最后一次出现的索引值是{1}", Array.IndexOf(intArray, 5));
+            Console.ReadKey();
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -337,4 +369,5 @@ namespace arrayExample
 
         }
     }
+
 }
