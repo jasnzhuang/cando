@@ -8,6 +8,9 @@ namespace arrayExample
         /// <summary> 
         /// 一维数组的定义 
         /// </summary> 
+        //使用数组中的元素是通过索引值来实现的。
+        //数组中遍历元素，即对数组中所有的元素都按次序访问并仅访问一次。
+        //一维数组编历时应该尽量使用foreach语句，因为foreach会自动检查数组的索引，使其不会出现越界值。
         public static void TestArr1()
         {
             var myIntArr = new int[100];
@@ -126,7 +129,7 @@ namespace arrayExample
         public static void Test2()
         {
             //定义二维数组 
-            string[,] myStrArr2 = { { "懒" , "困" }, { "《上进》" , "《好学》" }, { "崟才", "眯眯眼" } };
+            string[,] myStrArr2 = { { "懒", "困" }, { "《上进》", "《好学》" }, { "崟才", "眯眯眼" } };
             //循环输出 
             foreach (var item in myStrArr2)
             {
