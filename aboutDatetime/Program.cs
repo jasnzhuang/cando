@@ -13,18 +13,13 @@ namespace aboutDatetime
         /// 计算本周的周一日期 
         /// </summary> 
         /// <returns></returns> 
-        public static DateTime GetMondayDate()
-        {
-            return GetMondayDate(DateTime.Now);
-        }
+        public static DateTime GetMondayDate() => GetMondayDate(DateTime.Now);
+
         /// <summary> 
         /// 计算本周周日的日期 
         /// </summary> 
         /// <returns></returns> 
-        public static DateTime GetSundayDate()
-        {
-            return GetSundayDate(DateTime.Now);
-        }
+        public static DateTime GetSundayDate() => GetSundayDate(DateTime.Now);
         /// <summary> 
         /// 计算某日起始日期（礼拜一的日期） 
         /// </summary> 
@@ -82,7 +77,7 @@ namespace aboutDatetime
             return t;
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             DateTime dt = DateTime.Now;  //当前时间
 
