@@ -75,7 +75,7 @@ namespace aboutJson
     /// <summary>
     /// Json测试
     /// </summary>
-    public class JsonTest : IRun
+    public class JsonTest:IRun
     {
         public void Run()
         {

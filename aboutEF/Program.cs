@@ -8,6 +8,34 @@ using System.ComponentModel.DataAnnotations;
 
 namespace aboutEF
 {
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var db = new BloggingContext())
+            {
+                // 根据用户输入的内容创建一条Blog，并存入数据库的那张表呢？
+                Console.Write(@"来吧，愚蠢的人类，输入你这条Blog的内容: ");
+                var name = Console.ReadLine();
+                var blog = new Blog {Name = name};
+                db.Blogs.Add(blog);
+                db.SaveChanges();
+                // 显示数据库内的所有Blog
+                var query = from b in db.Blogs
+                    orderby b.Name
+                    select b;
+                Console.WriteLine(@"英雄！数据库里的Blog都在这儿了！:");
+                foreach (var item in query)
+                {
+                    Console.WriteLine(item.Name);
+                }
+
+                Console.WriteLine(@"确认过眼神，放我走吧...");
+                Console.ReadKey();
+            }
+        }
+    }
+
     public class Blog
     {
         public int BlogId { get; set; }
@@ -16,6 +44,7 @@ namespace aboutEF
 
         public virtual List<Post> Posts { get; set; }
     }
+
     public class Post
     {
         public int PostId { get; set; }
@@ -27,8 +56,7 @@ namespace aboutEF
 
     public class User
     {
-        [Key]
-        public string Username { get; set; }
+        [Key] public string Username { get; set; }
         public string DisplayName { get; set; }
     }
 
@@ -43,33 +71,6 @@ namespace aboutEF
             modelBuilder.Entity<User>()
                 .Property(u => u.DisplayName)
                 .HasColumnName("display_name");
-        }
-    }
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            using (var db = new BloggingContext())
-            {
-                // Create and save a new Blog
-                Console.Write(@"Enter a name for a new Blog: ");
-                var name = Console.ReadLine();
-                var blog = new Blog { Name = name };
-                db.Blogs.Add(blog);
-                db.SaveChanges();
-                // Display all Blogs from the database
-                var query = from b in db.Blogs
-                    orderby b.Name
-                    select b;
-                Console.WriteLine(@"All blogs in the database:");
-                foreach (var item in query)
-                {
-                    Console.WriteLine(item.Name);
-                }
-                Console.WriteLine(@"Press any key to exit...");
-                Console.ReadKey();
-            }
         }
     }
 }
