@@ -13,10 +13,11 @@ namespace Linq_2
         /// </summary>
         private string _Name;
         public string Name => this._Name;
-        private string _Xingbie;
+
         /// <summary>
         /// 学生性别的字段和属性
         /// </summary>
+        private string _Xingbie;
         public string Xingbie => this._Xingbie;
 
         /// <summary>
@@ -91,7 +92,9 @@ namespace Linq_2
     {
         static void Main(string[] args)
         {
-            Student[] arr =
+            // Student[] arr =
+            // List<Student> arr = new List<Student>
+            var arr = new List<Student>
             {
                 new Student("张氏那","男",20),
                 new Student("李四","男",23),
@@ -102,7 +105,7 @@ namespace Linq_2
                 new Student("王丹","女",20),
                 new Student("张宝","男",25),
             };
-            Console.WriteLine("query");
+            Console.WriteLine("query1，就是个简单的遍历");
             var query =
                 from val in arr
                 select val;
@@ -117,7 +120,7 @@ namespace Linq_2
 
 
 
-            Console.WriteLine("query2");
+            Console.WriteLine("query2，就是个简单的遍历，外加上格式化输出");
             var query2 =
                 from val in arr
                 select val.Name;
@@ -131,7 +134,7 @@ namespace Linq_2
             Console.ReadLine();
 
 
-            Console.WriteLine("query3");
+            Console.WriteLine("query3，就是个简单的LINQ属性查询，外加个简单的遍历，再加上格式化输出");
             var query3 =
                 from val in arr
                 select val.Name.Length;
@@ -145,7 +148,7 @@ namespace Linq_2
             Console.ReadLine();
 
 
-            Console.WriteLine("query4");
+            Console.WriteLine("query4，就是个简单的LINQ组合属性查询，外加个简单的遍历，再加上格式化输出");
             var query4 =
                 from val in arr
                 select new { val.Name, val.Age, NameLen = val.Name.Length };
@@ -160,11 +163,13 @@ namespace Linq_2
 
 
 
-            Console.WriteLine("query5");
-            int[] ary = { 9, 54, 32, 1, 67, 43, 0, 9, 7, 4, 9, 2, 23, 66, 61 };
+            Console.WriteLine("query5，就是个简单的LINQ排序查询，外加个简单的遍历，再加上格式化输出");
+            // int[] ary = { 9, 54, 32, 1, 67, 43, 0, 9, 7, 4, 9, 2, 23, 66, 61 };
+            // List<int> ary = new List<int> { 9, 54, 32, 1, 67, 43, 0, 9, 7, 4, 9, 2, 23, 66, 61 };
+            var ary = new List<int> { 9, 54, 32, 1, 67, 43, 0, 9, 7, 4, 9, 2, 23, 66, 61 };
             var query5 =
                 from val in ary
-                orderby val
+                orderby val ascending
                 select val;
             foreach (var item in query5)
             {
@@ -177,7 +182,7 @@ namespace Linq_2
 
 
 
-            Console.WriteLine("query6");
+            Console.WriteLine("query6，就是个简单的LINQ逆序排序查询，外加个简单的遍历，再加上格式化输出");
             var query6 =
                 from val in ary
                 orderby val descending
@@ -192,7 +197,7 @@ namespace Linq_2
             Console.ReadLine();
 
 
-            Console.WriteLine("query7");
+            Console.WriteLine("query7，就是个简单的LINQ多重排序查询，外加个简单的遍历，再加上格式化输出");
             var query7 =
                 from val in arr
                 orderby val.Name.Length ascending, val.Age descending
@@ -208,7 +213,7 @@ namespace Linq_2
 
 
 
-            Console.WriteLine("query8");
+            Console.WriteLine("query8，就是个简单的LINQ分组嵌套查询，外加个简单的遍历，再加上格式化输出");
             var query8 =
                 from val in arr
                 group val by val.Xingbie;
@@ -228,7 +233,7 @@ namespace Linq_2
 
 
 
-            Console.WriteLine("query9");
+            Console.WriteLine("query9就是个简单的LINQ逆序排序加分组嵌套查询，外加个简单的遍历，再加上格式化输出");
             var query9 =
                 from val in arr
                 group val by val.Age into stgrp
@@ -250,7 +255,8 @@ namespace Linq_2
             /*
              *from子句的复合查询 
              */
-            Student[] stAry = {
+            // Student[] stAry = {
+            var stAry = new List<Student>{
                                   new Student("张氏那","男",20,
                                       new List<LessonScore>{
                                           new LessonScore("语文",80.5f),
@@ -301,7 +307,7 @@ namespace Linq_2
                                       }),
                               };
 
-            Console.WriteLine("query10");
+            Console.WriteLine("query10，就是个一般的LINQ条件加分组嵌套查询，外加个简单的遍历，再加上格式化输出");
             var query10 =
                 from st in stAry
                 from scr in st.Scores
@@ -323,7 +329,7 @@ namespace Linq_2
 
 
 
-            Console.WriteLine("query11");
+            Console.WriteLine("query11，就是个一般的LINQ条件加分组嵌套查询，外加个简单的遍历，再加上格式化输出");
             int[] intarry1 = { 5, 10, 15, 20, 25, 50, 30, 33, 100 };
             int[] intarry2 = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
             var query11 =
@@ -346,7 +352,7 @@ namespace Linq_2
             Console.ReadLine();
 
 
-            Console.WriteLine("query12");
+            Console.WriteLine("query12，就是个一般的LINQ inner join查询，外加个简单的遍历，再加上格式化输出");
             Console.WriteLine("*********************join*****************************************");
             Console.WriteLine();
             Console.WriteLine("**********内部联接**************************");
@@ -363,7 +369,7 @@ namespace Linq_2
 
             Console.WriteLine();
             Console.WriteLine("**************************************************************************");
-            Console.WriteLine();
+            Console.WriteLine("query13，就是个一般的LINQ join查询，外加个简单的遍历，再加上格式化输出");
             Console.ReadLine();
             Console.WriteLine("**********分组联接**************************");
 
@@ -383,7 +389,7 @@ namespace Linq_2
 
             Console.WriteLine();
             Console.WriteLine("**************************************************************************");
-            Console.WriteLine();
+            Console.WriteLine("query12，就是个一般的LINQ left outer join查询，外加个简单的遍历，再加上格式化输出");
             Console.ReadLine();
             Console.WriteLine("**********左外部联接**************************");
             var query14 =

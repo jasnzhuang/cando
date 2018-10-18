@@ -46,7 +46,7 @@ namespace _171108
         public Parent(string Name, int Age, string Sex) : base(Name, Age, Sex)
         {
         }
-        public virtual void PrintInfo()
+        public override void PrintInfo()
         {
             Sex = Sex == "m" ? "国王" : "王后";
             Console.WriteLine("{0},{1}", Name, Sex);

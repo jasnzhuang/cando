@@ -9,11 +9,11 @@ namespace Dictionary
     class Program
     {
         /// <summary>
-        /// Dictionary&lt;string, string&gt;是一个泛型
+        /// Dictionary<string, string>是一个泛型
         /// 
         /// 他本身有集合的功能有时候可以把它看成数组
         /// 
-        /// 他的结构是这样的：Dictionary&lt;[key], [value]&gt;
+        /// 他的结构是这样的：Dictionary<[key], [value]>
         /// 
         /// 他的特点是存入对象是需要与[key]值一一对应的存入该泛型
         /// 
@@ -23,7 +23,7 @@ namespace Dictionary
         /// 
         /// //实例化对象
         /// 
-        /// Dictionary&lt;int, string&gt; dic = new Dictionary&lt;int, string&gt;();
+        /// Dictionary<int, string> dic = new Dictionary<int, string>();
         /// 
         /// //对象打点添加
         /// 

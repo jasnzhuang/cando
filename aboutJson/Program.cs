@@ -75,7 +75,8 @@ namespace aboutJson
     /// <summary>
     /// Json测试
     /// </summary>
-    public class JsonTest:IRun
+    // public class JsonTest : IRun
+    public class JsonTest
     {
         public void Run()
         {
@@ -179,22 +180,22 @@ namespace aboutJson
             string personJson =
                 "{ 'FirstName': '小坦克1','LastName':'Tank xiao1', 'Age':'30', 'Books':[{'BookName':'c#1', 'Price':'29.9'},{'BookName':'Mac编程1', 'Price':'39.9'}]}";
 
-            string allMoveJson =
+            string allPersonJson =
                 @"[
                     { 'FirstName': '小坦克2','LastName':'Tank xiao2', 'Age':'30', 'Books':[{'BookName':'c#2', 'Price':'29.9'},{'BookName':'Mac编程2', 'Price':'39.9'}]},
                     {'FirstName': '小坦克3','LastName':'Tank xiao3', 'Age':'40', 'Books':[{'BookName':'c#3', 'Price':'29.9'},{'BookName':'Mac编程3', 'Price':'39.9'}]}]";
 
             // 反序列化 单个对象
-            Person oneMovie = JsonConvert.DeserializeObject<Person>(personJson);
+            Person onePerson = JsonConvert.DeserializeObject<Person>(personJson);
 
             // 反序列化 对象集合
-            List<Person> allMovie = JsonConvert.DeserializeObject<List<Person>>(allMoveJson);
+            List<Person> allPerson = JsonConvert.DeserializeObject<List<Person>>(allPersonJson);
 
-            Console.WriteLine(oneMovie.FirstName);
-            Console.WriteLine(allMovie[1].FirstName);
+            Console.WriteLine(onePerson.FirstName);
+            Console.WriteLine(allPerson[1].FirstName);
 
             // 序列化
-            string afterJson = JsonConvert.SerializeObject(allMovie);
+            string afterJson = JsonConvert.SerializeObject(allPerson);
         }
     }
 

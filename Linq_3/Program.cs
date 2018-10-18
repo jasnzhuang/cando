@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Linq_3
@@ -7,16 +8,16 @@ namespace Linq_3
     {
         public int Id { get; set; }
         public string Company { get; set; }
-        public string LastName { get; set; }
         public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string StateProvince { get; set; }
-        public Contact(string company, string lastName, string firstName, string address, string city, string stateProvince)
+        public Contact(string company, string firstName, string lastName, string address, string city, string stateProvince)
         {
             Company = company;
-            LastName = lastName;
             FirstName = firstName;
+            LastName = lastName;
             Address = address;
             City = city;
             StateProvince = stateProvince;
@@ -28,8 +29,9 @@ namespace Linq_3
     {
         static void Main()
         {
-            
-            Contact[] contacts ={
+
+            // Contact[] contacts ={
+            var contacts = new List<Contact>{
                 new Contact("骗子公司", "眯眯眼", "刘", "678", "哈尔滨", "黑龙江"),
                 new Contact("传销公司", "大伟", "王", "678", "沈阳", "辽宁"),
                 new Contact("转账公司", "璇", "刘", "678", "长春", "吉林"),

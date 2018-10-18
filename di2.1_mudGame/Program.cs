@@ -54,7 +54,7 @@ namespace di2._1_mudGame
         /// <summary>  
         /// 怪物的生命值  
         /// </summary>  
-        private Int32 HP { get; set; }
+        private Int32 Hp { get; set; }
 
         /// <summary>  
         /// 怪物的攻击力  
@@ -65,8 +65,8 @@ namespace di2._1_mudGame
         /// /// <param name="hp">设置怪物的初始HP</param> 
         public Monster(String name, Int32 hp)
         {
-            this.Name = name;
-            this.HP = hp;
+            Name = name;
+            Hp = hp;
         }
 
         /// <summary>  
@@ -75,20 +75,20 @@ namespace di2._1_mudGame
         /// <param name="loss">此次攻击损失的HP</param>  
         public void Notify(Int32 loss)
         {
-            if (this.HP <= 0)
+            if (Hp <= 0)
             {
                 Console.WriteLine("此怪物已死");
                 return;
             }
 
-            this.HP -= loss;
-            if (this.HP <= 0)
+            Hp -= loss;
+            if (Hp <= 0)
             {
-                Console.WriteLine("怪物" + this.Name + "被打死");
+                Console.WriteLine("怪物" + Name + "被打死");
             }
             else
             {
-                Console.WriteLine("怪物" + this.Name + "损失" + loss + "HP");
+                Console.WriteLine("怪物" + Name + "损失" + loss + "HP");
             }
         }
 
@@ -101,12 +101,12 @@ namespace di2._1_mudGame
         /// <summary>  
         /// 表示角色初始生命值  
         /// </summary> 
-        private int HP;
+        private int _hp;
 
         /// <summary>  
         /// 表示角色名称  
         /// </summary> 
-        private string Name;
+        private string _name;
 
         /// <summary>  
         /// 表示角色目前所持武器  
@@ -116,7 +116,7 @@ namespace di2._1_mudGame
         /// <param name="monster">被攻击的怪物</param>  
         public void Attack(Monster monster)
         {
-            this.Weapon.AttackTarget(monster);
+            Weapon.AttackTarget(monster);
         }
 
         /// <summary>  
@@ -125,8 +125,8 @@ namespace di2._1_mudGame
         /// <param name="hp">角色的初始HP</param>  
         public Role(string name, Int32 hp)
         {
-            this.Name = name;
-            this.HP = hp;
+            _name = name;
+            _hp = hp;
         }
     }
     class Program
